@@ -1,0 +1,55 @@
+/* src/components/TrendingTips.css */
+.trending-tips {
+  margin-top: 30px;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 80px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  animation: flipAnimation 0.8s ease-in-out;
+}
+
+@keyframes flipAnimation {
+  0%   { transform: rotateX(0deg); }
+  50%  { transform: rotateX(90deg); }
+  100% { transform: rotateX(0deg); }
+}
+
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.flip-card-front {
+  background: #3498db;
+  color: white;
+  font-weight: 600;
+}
+
+.flip-card-back {
+  background: #f8f9fa;
+  color: #333;
+  transform: rotateX(180deg);
+}
